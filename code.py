@@ -1,6 +1,5 @@
 # import packages
 import pandas as pd
-import folium
 import plotly.express as px
 import plotly as plt
 import seaborn as sns
