@@ -1,7 +1,7 @@
 # import packages
 import streamlit as st
 import pandas as pd
-
+import geopandas as gpd
 
 st.set_page_config(
   page_title='Infant mortality analysis',
