@@ -1,8 +1,7 @@
 # import packages
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-import ppscore as pps
+
 
 st.set_page_config(
   page_title='Infant mortality analysis',
