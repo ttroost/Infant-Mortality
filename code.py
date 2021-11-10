@@ -53,11 +53,10 @@ st.write(fig)
 gapminder_2019 = gapminder[gapminder['year']==2007]
 
 
-bplot = sns.boxplot(y='lifeExp', x='continent', 
+fig = sns.boxplot(y='lifeExp', x='continent', 
                  data=gapminder_2019, 
                  width=0.5,
-                 palette="colorblind")
-bplot.set_title('Life expectancy per continent in 2019')
-st.write(bplot)
+                 palette="colorblind").set_title('Life expectancy per continent in 2019')
+st.write(fig)
 
 
