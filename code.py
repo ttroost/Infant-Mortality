@@ -55,16 +55,14 @@ if sidebar_keuze == 'Infant mortality analysis':
   with col1:
     fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
     st.write(fig)
-    with col2:
+  with col2:
       fig = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
       st.write(fig)
   
-  col1, col2 = st.columns(2)
-  with col1:
-    gapminder_2019 = gapminder[gapminder['year']==2007]
-    fig = px.box(gapminder_2019, y="lifeExp", x="continent")
-    st.write(fig)
-  with col2:
+  gapminder_2019 = gapminder[gapminder['year']==2007]
+  fig = px.box(gapminder_2019, y="lifeExp", x="continent")
+  st.write(fig)
+
     
          
        
