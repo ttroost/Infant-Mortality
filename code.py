@@ -91,7 +91,7 @@ if sidebar_keuze == 'Infant mortality analysis':
   fig = px.box(gapminder_2019, y="lifeExp", x="continent")
   st.write(fig)
   
-  st.image('"https://images0.persgroep.net/rcs/QwWUYB6t8dQG7cpgeJiA5R-WCLU/diocontent/70177042/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"')
+  st.image("https://images0.persgroep.net/rcs/QwWUYB6t8dQG7cpgeJiA5R-WCLU/diocontent/70177042/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8")
 
     
          
