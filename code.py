@@ -43,41 +43,6 @@ df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Birth
 df2.head()
 
 
-#map 1985
-m = folium.Map(zoom_control=False, tiles = 'cartodb positron')
-
-
-folium.Choropleth(
-    geo_data = merged_mortality,
-    data = merged_mortality,
-    name='geometry',
-    columns = ['Country', '1985'],
-    fill_color = 'YlGn',
-    fill_opacity = 0.7,
-    line_opacity = 0.2,
-    legend_name='Infant mortality rate per country per 1000 live births',
-    key_on="feature.properties.Country").add_to(m)
-
-m
-
-#map 2019
-
-m = folium.Map(zoom_control=False, tiles = 'cartodb positron')
-
-
-folium.Choropleth(
-    geo_data = merged_mortality,
-    data = merged_mortality,
-    name='geometry',
-    columns = ['Country', '2019'],
-    fill_color = 'YlGn',
-    fill_opacity = 0.7,
-    line_opacity = 0.2,
-    legend_name='Infant mortality rate per country per 1000 live births',
-    key_on="feature.properties.Country").add_to(m)
-
-m
-
 # scatterplot
 fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red')
 fig.update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
