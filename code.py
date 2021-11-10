@@ -63,8 +63,7 @@ m
 
 #map 2019
 
-m = folium.Map(zoom_control=False, scrollWheelZoom=False, dragging=False,
-              tiles = 'cartodb positron')
+m = folium.Map(zoom_control=False, tiles = 'cartodb positron')
 
 
 folium.Choropleth(
