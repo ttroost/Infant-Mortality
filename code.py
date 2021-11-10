@@ -10,7 +10,7 @@ from streamlit_folium import folium_static
 from statsmodels.formula.api import ols
 import ppscore as pps
 import seaborn as sns
-
+import matplotlib.pyplot as plt
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
