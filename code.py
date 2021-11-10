@@ -48,8 +48,16 @@ if sidebar_keuze == 'Infant mortality analysis':
   st.markdown("<h3 style='text-align: center; color: black;'>Infant mortality analysis</h3>", unsafe_allow_html=True)
   st.markdown('***')
   
-  fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
-  st.write(fig)
+  col1, col2 = st.columns([7,1])
+  
+  with col1:
+    fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
+    st.write(fig)
+    with col2:
+      fig = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+      st.write(fig)
+  
+  
   
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
   style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
