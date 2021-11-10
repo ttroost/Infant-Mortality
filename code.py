@@ -64,7 +64,7 @@ if sidebar_keuze == 'Infant mortality analysis':
   style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
   highlight_function = lambda x: {'fillColor': '#000000', 'color':'#000000', 'fillOpacity': 0.50, 'weight': 0.1}
   if kaart_opties == '1985':
-    a = folium.Map(zoom_start= 10,tiles='cartodbpositron')
+    a = folium.Map(zoom_control=False, zoom_start= 10,tiles='cartodbpositron')
     folium.Choropleth(geo_data= merged_mortality,
                       name= 'geometry',
                       data= merged_mortality,
@@ -76,7 +76,7 @@ if sidebar_keuze == 'Infant mortality analysis':
                       legend_name= 'Infant mortality rate per country per 1000 live births').add_to(a)
     folium_static(a)
   if kaart_opties == '2019':
-    b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+    b = folium.Map(zoom_control=False, zoom_start= 7,tiles='cartodbpositron')
     folium.Choropleth(geo_data= merged_mortality,
                       name= 'geometry',
                       data= merged_mortality,
