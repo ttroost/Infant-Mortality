@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly as plt
 import seaborn as sns
 import ppscore as pps
-pip install openpyxl
+import openpyxl
 
 st.set_page_config(
   page_title='Infant mortality analysis',
