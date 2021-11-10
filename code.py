@@ -44,7 +44,7 @@ df2.head()
 
 
 #map 1985
-m = folium.Map(zoom_control=False, scrollWheelZoom=False, dragging=False,
+m = folium.Map(zoom_control=False, dragging=False,
               tiles = 'cartodb positron')
 
 
