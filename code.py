@@ -23,7 +23,7 @@ gapminder = pd.read_csv(data_url)
 with st.sidebar:
   sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
 
-if sidebar_keuze == 'Sources':
+else sidebar_keuze == 'Sources':
   st.markdown('***')
   st.markdown("<h3 style='text-align: center; color: black;'>Sources</h3>", unsafe_allow_html=True)
   st.markdown('***')
