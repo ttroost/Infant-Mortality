@@ -6,7 +6,6 @@ import folium
 import plotly.express as px
 import plotly as plt
 import seaborn as sns
-import ppscore as pps
 import openpyxl
 
 st.set_page_config(
