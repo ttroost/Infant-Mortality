@@ -15,7 +15,7 @@ import plotly.graph_objects as go
 CURRENT_THEME ='green'
 IS_DARK_THEME = False
 
-[theme]
+
 primaryColor = "#575fe8"
 backgroundColor = "#f5f7f3"
 secondaryBackgroundColor = "#c9eab8"
