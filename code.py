@@ -8,13 +8,6 @@ import plotly as plt
 import seaborn as sns
 import openpyxl
 
-st.set_page_config(
-  page_title='Infant mortality analysis',
-  menu_items={
-    'Get Help': None,
-    'Report a bug': None
-  }
-)
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
