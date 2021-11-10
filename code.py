@@ -106,11 +106,6 @@ if sidebar_keuze == 'Infant mortality analysis':
 
   matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
   sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
-  l = ["CBR", "GrowthRate", "IMR"]
-  chk = [Checkbox(description=a) for a in l]
-  def updatePlot(**kwargs):
-    print([(k,v) for k, v in kwargs.items()])
-  interact(updatePlot, **{c.description: c.value for c in chk})
   st.write(matrix_df)
       
 
