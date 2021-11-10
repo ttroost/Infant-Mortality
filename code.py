@@ -58,5 +58,6 @@ bplot = sns.boxplot(y='lifeExp', x='continent',
                  width=0.5,
                  palette="colorblind")
 bplot.set_title('Life expectancy per continent in 2019')
+st.write(bplot)
 
 
