@@ -44,8 +44,7 @@ df2.head()
 
 
 #map 1985
-m = folium.Map(zoom_control=False, dragging=False,
-              tiles = 'cartodb positron')
+m = folium.Map(zoom_control=False, tiles = 'cartodb positron')
 
 
 folium.Choropleth(
