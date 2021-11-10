@@ -90,6 +90,8 @@ if sidebar_keuze == 'Infant mortality analysis':
   gapminder_2019 = gapminder[gapminder['year']==2007]
   fig = px.box(gapminder_2019, y="lifeExp", x="continent")
   st.write(fig)
+  
+  st.image('https://github.com/ttroost/Infant-Mortality/blob/main/matrix.png')
 
     
          
