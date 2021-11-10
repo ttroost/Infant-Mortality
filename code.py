@@ -5,7 +5,6 @@ import geopandas as gpd
 import folium
 import plotly.express as px
 import plotly as plt
-import seaborn as sns
 import openpyxl
 from streamlit_folium import folium_static
 from statsmodels.formula.api import ols
