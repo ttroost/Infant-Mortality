@@ -95,16 +95,11 @@ if sidebar_keuze == 'Infant mortality analysis':
   col1, col2 = st.columns([7,1])
   
   with col1:
-    fig = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+    fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)').update_layout(yaxis_title="Infant mortality rate")
     st.write(fig)
     with col2:
-      fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)').update_layout(yaxis_title="Infant mortality rate")
+      fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
       st.write(fig)
-  
-  fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
-  st.write(fig)
-  
- 
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
