@@ -19,24 +19,7 @@ mortality_africa = pd.read_excel('mortality rate africa.xlsx')
 data_url = 'http://bit.ly/2cLzoxH'
 gapminder = pd.read_csv(data_url)
 
-# interactive onderdelen
-with st.sidebar:
-  sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
 
-else sidebar_keuze == 'Sources':
-  st.markdown('***')
-  st.markdown("<h3 style='text-align: center; color: black;'>Sources</h3>", unsafe_allow_html=True)
-  st.markdown('***')
-  
-  st.write('''
-           https://www.kaggle.com/kumarajarshi/life-expectancy-who
-           https://data.worldbank.org/indicator/SP.DYN.IMRT.IN
-           https://datahub.io/core/geo-countries
-           https://population.un.org/wpp2019/Download/Standard/CSV/
-           https://www.statista.com/statistics/264714/countries-with-the-highest-infant-mortality-rate/
-           https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
-           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
-           
 
 # rename admin to country so we can merge
 countrie.rename(columns = {'ADMIN':'Country'}, inplace = True)
@@ -54,10 +37,19 @@ merged_mortality.head()
 df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Births','LExMale','LExFemale','CDR','Deaths','DeathsMale','DeathsFemale','CNMR','NetMigrations','NatIncr','SRB'], axis = 1)
 df2.head()
 
-#scatter
+
+# interactive onderdelen
+with st.sidebar:
+  sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
+
+if sidebar_keuze = 'Infant mortality analysis':
+  st.markdown('***')
+  st.markdown("<h3 style='text-align: center; color: black;'>Infant mortality analysis</h3>", unsafe_allow_html=True)
+  st.markdown('***')
+  
+  #scatter
 fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
 st.write(fig)
-
 
 col1, col2 = st.columns([7,1])
 
@@ -78,4 +70,17 @@ gapminder_2019 = gapminder[gapminder['year']==2007]
 fig = px.box(gapminder_2019, y="lifeExp", x="continent")
 st.write(fig)
 
-
+elif sidebar_keuze == 'Sources':
+  st.markdown('***')
+  st.markdown("<h3 style='text-align: center; color: black;'>Sources</h3>", unsafe_allow_html=True)
+  st.markdown('***')
+  
+  st.write('''
+           https://www.kaggle.com/kumarajarshi/life-expectancy-who
+           https://data.worldbank.org/indicator/SP.DYN.IMRT.IN
+           https://datahub.io/core/geo-countries
+           https://population.un.org/wpp2019/Download/Standard/CSV/
+           https://www.statista.com/statistics/264714/countries-with-the-highest-infant-mortality-rate/
+           https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
+           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
+           
