@@ -130,7 +130,5 @@ elif sidebar_keuze == 'Sources':
            
            https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
            
-           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv
-           
-           https://vverde.github.io/blob/interactivechoropleth.html''')
+           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
            
