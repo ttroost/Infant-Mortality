@@ -63,7 +63,7 @@ if sidebar_keuze == 'Infant mortality analysis':
       st.write(fig)
     else:
       st.write(fig3)
-    st.write(fig)
+    
       
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
   style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
