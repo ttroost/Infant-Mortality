@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly as plt
 import seaborn as sns
 import openpyxl
-import statsmodels
+
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
@@ -37,7 +37,7 @@ df2.head()
 
 
 # scatterplot
-fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red')
+fig = px.scatter(df, y='IMR', x="TFR")
 fig.update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
 fig.show()
 
