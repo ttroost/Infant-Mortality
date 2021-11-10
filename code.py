@@ -21,7 +21,7 @@ gapminder = pd.read_csv(data_url)
 
 # interactive onderdelen
 
-withst.sidebar:
+with st.sidebar:
   sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
 
 # rename admin to country so we can merge
