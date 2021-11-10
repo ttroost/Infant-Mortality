@@ -12,6 +12,9 @@ import ppscore as pps
 import seaborn as sns
 import plotly.graph_objects as go
 
+CURRENT_THEME = 'green'
+IS_DARK_THEME = False
+
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
 countrie = gpd.read_file('countries.geojson')
