@@ -43,6 +43,7 @@ fig.show()
 
 # histogram
 fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)')
+labels = {'sum of infant mortality rate' : 'Infant mortality rate'}
 st.write(fig)
 
 
