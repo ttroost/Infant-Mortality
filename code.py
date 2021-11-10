@@ -86,11 +86,7 @@ if sidebar_keuze == 'Infant mortality analysis':
                       line_opacity= 0.8,
                       legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
     folium_static(b)
-  
-  gapminder_2019 = gapminder[gapminder['year']==2007]
-  fig = px.box(gapminder_2019, y="lifeExp", x="continent")
-  st.write(fig)
-  
+
   col1, col2 = st.columns(2)
   
   with col1:
