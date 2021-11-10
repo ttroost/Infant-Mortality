@@ -39,8 +39,7 @@ merged_mortality = countrie.merge(mortality, on = 'Country')
 merged_mortality.head()
 
 # drop columns df
-df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Births','LExMale','LExFemale','CDR','Deaths','DeathsMale','DeathsFemale','CNMR','NetMigrations','NatIncr','SRB'], axis = 1)
-df2.head()
+df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Births','LExMale','LExFemale','CDR','Deaths','DeathsMale','DeathsFemale','CNMR','NetMigrations','NatIncr','SRB', 'GrowthRate', 'MAC', 'NRR', 'Q5'], axis = 1)
 
 
 # interactive onderdelen
@@ -108,8 +107,18 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.histogram(household, x="Region", y = 'Household size').update_layout(title = 'Household size per region', xaxis_title = 'Regions', yaxis_title = 'Household size')
     st.write(fig)
     
+  col1, col2 = st.columns(2)
+  
+  with col1:
+    st.image("matrix.png")
+  with col2:
+    st.write('''
+    TFR = Total fertility (live births per woman)
+    CBR = Crude birth rate (per 1000 population)
+    LEx = Life expectancy at birth for both sexes combined (years)
+    IMR = Infant mortality rate (infant deaths per 1000 live births)
     
-  st.image("matrix.png")
+    
   
  
 
