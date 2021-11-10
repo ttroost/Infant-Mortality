@@ -11,13 +11,6 @@ from statsmodels.formula.api import ols
 import ppscore as pps
 import seaborn as sns
 
-[theme]
-primaryColor = "#E694FF"
-backgroundColor = "#00172B"
-secondaryBackgroundColor = "#0083B8"
-textColor = "#C6CDD4"
-font = "sans-serif"
-
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
