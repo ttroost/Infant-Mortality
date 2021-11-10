@@ -105,8 +105,8 @@ if sidebar_keuze == 'Infant mortality analysis':
       st.write(fig)
 
   matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
-  fig = sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
-  st.write(fig)
+  sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
+  st.pyploy
       
 
 elif sidebar_keuze == 'Sources':
