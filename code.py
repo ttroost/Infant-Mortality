@@ -22,6 +22,7 @@ infants = pd.read_excel('infants2.xlsx')
 mortality_africa = pd.read_excel('mortality rate africa.xlsx')
 data_url = 'http://bit.ly/2cLzoxH'
 gapminder = pd.read_csv(data_url)
+household = pd.read_excel('household.xlsx')
 
 
 
@@ -111,6 +112,8 @@ if sidebar_keuze == 'Infant mortality analysis':
   with col2:
     st.image("matrix.png")
   
+  fig = px.histogram(household, x="Region", y = 'Household size').update_layout(title = 'Household size per region', xaxis_title = 'Regions', yaxis_title = 'Household size')
+  st.write(fig)
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
@@ -130,5 +133,7 @@ elif sidebar_keuze == 'Sources':
            
            https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
            
-           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
+           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv
+           
+           https://www.pewforum.org/2019/12/12/religion-and-living-arrangements-around-the-world/''')
            
