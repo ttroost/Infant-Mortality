@@ -10,7 +10,7 @@ from streamlit_folium import folium_static
 from statsmodels.formula.api import ols
 import ppscore as pps
 import seaborn as sns
-import matplotlib.pyplot as plt
+
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
@@ -106,6 +106,9 @@ if sidebar_keuze == 'Infant mortality analysis':
   matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
   fig2 = sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
   st.pyplot(fig2)
+  
+  fig = px.imshow(df2)
+  st.write(fig)
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
