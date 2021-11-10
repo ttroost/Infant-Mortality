@@ -66,7 +66,7 @@ if sidebar_keuze == 'Infant mortality analysis':
                       fill_opacity= 0.5,
                       line_opacity= 0.8,
                       legend_name= 'Infant mortality rate per country per 1000 live births').add_to(a)
-    st.write(a)
+    folium_static(a)
     
     if kaart_opties == '2019':
       b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
@@ -79,7 +79,7 @@ if sidebar_keuze == 'Infant mortality analysis':
                         fill_opacity= 0.5,
                         line_opacity= 0.8,
                         legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
-      st.write(b)
+      folium_static(b)
          
        
   col1, col2 = st.columns([7,1])
