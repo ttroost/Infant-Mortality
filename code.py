@@ -35,6 +35,10 @@ merged_mortality.head()
 df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Births','LExMale','LExFemale','CDR','Deaths','DeathsMale','DeathsFemale','CNMR','NetMigrations','NatIncr','SRB'], axis = 1)
 df2.head()
 
+fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
+st.write(fig)
+
+
 col1, col2 = st.columns([7,1])
 
 with col1:
