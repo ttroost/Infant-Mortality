@@ -67,19 +67,18 @@ if sidebar_keuze == 'Infant mortality analysis':
                       line_opacity= 0.8,
                       legend_name= 'Infant mortality rate per country per 1000 live births').add_to(a)
     folium_static(a)
-    
-    if kaart_opties == '2019':
-      b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
-      folium.Choropleth(geo_data= merged_mortality,
-                        name= 'geometry',
-                        data= merged_mortality,
-                        columns=['Country', '2019'],
-                        key_on='feature.properties.Country',
-                        fill_color= 'PuBuGn',
-                        fill_opacity= 0.5,
-                        line_opacity= 0.8,
-                        legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
-      folium_static(b)
+  if kaart_opties == '2019':
+    b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+    folium.Choropleth(geo_data= merged_mortality,
+                      name= 'geometry',
+                      data= merged_mortality,
+                      columns=['Country', '2019'],
+                      key_on='feature.properties.Country',
+                      fill_color= 'PuBuGn',
+                      fill_opacity= 0.5,
+                      line_opacity= 0.8,
+                      legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
+    folium_static(b)
          
        
   col1, col2 = st.columns([7,1])
