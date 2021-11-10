@@ -114,8 +114,11 @@ if sidebar_keuze == 'Infant mortality analysis':
   with col2:
     st.write('''
     TFR = Total fertility (live births per woman)
+    
     CBR = Crude birth rate (per 1000 population)
+    
     LEx = Life expectancy at birth for both sexes combined (years)
+    
     IMR = Infant mortality rate (infant deaths per 1000 live births)''')
     
     
