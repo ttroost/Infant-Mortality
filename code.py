@@ -19,6 +19,11 @@ mortality_africa = pd.read_excel('mortality rate africa.xlsx')
 data_url = 'http://bit.ly/2cLzoxH'
 gapminder = pd.read_csv(data_url)
 
+# interactive onderdelen
+
+withst.sidebar:
+  sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
+
 # rename admin to country so we can merge
 countrie.rename(columns = {'ADMIN':'Country'}, inplace = True)
 countrie.head()
@@ -35,6 +40,7 @@ merged_mortality.head()
 df2 = df.drop(['LocID', 'Location','VarID','Variant','Time', 'MidPeriod', 'Births','LExMale','LExFemale','CDR','Deaths','DeathsMale','DeathsFemale','CNMR','NetMigrations','NatIncr','SRB'], axis = 1)
 df2.head()
 
+#scatter
 fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
 st.write(fig)
 
