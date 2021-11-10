@@ -50,6 +50,47 @@ if sidebar_keuze == 'Infant mortality analysis':
   fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
   st.write(fig)
   
+  kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
+         style_function = lambda x: {'fillColor': '#ffffff', 
+                            'color':'#000000', 
+                            'fillOpacity': 0.1, 
+                            'weight': 0.1}
+         highlight_function = lambda x: {'fillColor': '#000000', 
+                                'color':'#000000', 
+                                'fillOpacity': 0.50, 
+                                'weight': 0.1}
+
+         if kaart_opties == '1985':
+                  a = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+
+                  folium.Choropleth(
+                  geo_data= merged_mortality,
+                  name= 'geometry',
+                  data= merged_mortality,
+                  columns=['Country', '1985'],
+                  key_on='feature.properties.Country',
+                  fill_color= 'PuBuGn',
+                  fill_opacity= 0.5,
+                  line_opacity= 0.8,
+                  legend_name= 'Infant mortality rate per country per 1000 live births'
+                  ).add_to(a)
+
+          if kaart_opties == '2019':
+                  b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+
+                  folium.Choropleth(
+                  geo_data= merged_mortality,
+                  name= 'geometry',
+                  data= merged_mortality,
+                  columns=['Country', '2019'],
+                  key_on='feature.properties.Country',
+                  fill_color= 'PuBuGn',
+                  fill_opacity= 0.5,
+                  line_opacity= 0.8,
+                  legend_name= 'Infant mortality rate per country per 1000 live births'
+                  ).add_to(b)
+         
+       
   col1, col2 = st.columns([7,1])
   
   with col1:
@@ -79,5 +120,6 @@ elif sidebar_keuze == 'Sources':
            https://population.un.org/wpp2019/Download/Standard/CSV/
            https://www.statista.com/statistics/264714/countries-with-the-highest-infant-mortality-rate/
            https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
-           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
+           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv
+           https://vverde.github.io/blob/interactivechoropleth.html''')
            
