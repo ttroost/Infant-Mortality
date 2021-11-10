@@ -28,15 +28,14 @@ if sidebar_keuze == 'Sources':
   st.markdown("<h3 style='text-align: center; color: black;'>Sources</h3>", unsafe_allow_html=True)
   st.markdown('***')
   
-  st.write(' ' '
+  st.write('''
            https://www.kaggle.com/kumarajarshi/life-expectancy-who
            https://data.worldbank.org/indicator/SP.DYN.IMRT.IN
            https://datahub.io/core/geo-countries
            https://population.un.org/wpp2019/Download/Standard/CSV/
            https://www.statista.com/statistics/264714/countries-with-the-highest-infant-mortality-rate/
            https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
-           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv
-           ' ' ')
+           https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv''')
            
 
 # rename admin to country so we can merge
