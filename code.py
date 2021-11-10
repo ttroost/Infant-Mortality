@@ -51,44 +51,32 @@ if sidebar_keuze == 'Infant mortality analysis':
   st.write(fig)
   
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
-         style_function = lambda x: {'fillColor': '#ffffff', 
-                            'color':'#000000', 
-                            'fillOpacity': 0.1, 
-                            'weight': 0.1}
-         highlight_function = lambda x: {'fillColor': '#000000', 
-                                'color':'#000000', 
-                                'fillOpacity': 0.50, 
-                                'weight': 0.1}
-
-         if kaart_opties == '1985':
-                  a = folium.Map(zoom_start= 7,tiles='cartodbpositron')
-
-                  folium.Choropleth(
-                  geo_data= merged_mortality,
-                  name= 'geometry',
-                  data= merged_mortality,
-                  columns=['Country', '1985'],
-                  key_on='feature.properties.Country',
-                  fill_color= 'PuBuGn',
-                  fill_opacity= 0.5,
-                  line_opacity= 0.8,
-                  legend_name= 'Infant mortality rate per country per 1000 live births'
-                  ).add_to(a)
-
-          if kaart_opties == '2019':
-                  b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
-
-                  folium.Choropleth(
-                  geo_data= merged_mortality,
-                  name= 'geometry',
-                  data= merged_mortality,
-                  columns=['Country', '2019'],
-                  key_on='feature.properties.Country',
-                  fill_color= 'PuBuGn',
-                  fill_opacity= 0.5,
-                  line_opacity= 0.8,
-                  legend_name= 'Infant mortality rate per country per 1000 live births'
-                  ).add_to(b)
+  style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
+  highlight_function = lambda x: {'fillColor': '#000000', 'color':'#000000', 'fillOpacity': 0.50, 'weight': 0.1}
+  
+  if kaart_opties == '1985':
+    a = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+    folium.Choropleth(geo_data= merged_mortality,
+                      name= 'geometry',
+                      data= merged_mortality,
+                      columns=['Country', '1985'],
+                      key_on='feature.properties.Country',
+                      fill_color= 'PuBuGn',
+                      fill_opacity= 0.5,
+                      line_opacity= 0.8,
+                      legend_name= 'Infant mortality rate per country per 1000 live births').add_to(a)
+    
+    if kaart_opties == '2019':
+      b = folium.Map(zoom_start= 7,tiles='cartodbpositron')
+      folium.Choropleth(geo_data= merged_mortality,
+                        name= 'geometry',
+                        data= merged_mortality,
+                        columns=['Country', '2019'],
+                        key_on='feature.properties.Country',
+                        fill_color= 'PuBuGn',
+                        fill_opacity= 0.5,
+                        line_opacity= 0.8,
+                        legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
          
        
   col1, col2 = st.columns([7,1])
