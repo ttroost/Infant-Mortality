@@ -2,6 +2,12 @@
 import streamlit as st
 import pandas as pd
 import geopandas as gpd
+import folium
+import plotly.express as px
+import plotly as plt
+import seaborn as sns
+import ppscore as pps
+pip install openpyxl
 
 st.set_page_config(
   page_title='Infant mortality analysis',
