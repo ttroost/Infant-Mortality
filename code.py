@@ -51,12 +51,11 @@ if sidebar_keuze == 'Infant mortality analysis':
   st.markdown('***')
   st.markdown("<h3 style='text-align: center; color: black;'>Infant mortality analysis</h3>", unsafe_allow_html=True)
   st.markdown('***')
-    
-  col1, col2 = st.columns(2)
   
-  with col1:
-    fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'Gross Domestic Product', yaxis_title = 'Infant deaths')
-    st.write(fig)
+  gapminder_2019 = gapminder[gapminder['year']==2007]
+  fig = px.box(gapminder_2019, y="lifeExp", x="continent").update_layout(title = 'Life expectancy per continent', xaxis_title = 'Continents', yaxis_title = 'Life expectancy')
+  st.write(fig)
+  
   with col2:
     fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red').update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
     fig3 = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
@@ -64,7 +63,8 @@ if sidebar_keuze == 'Infant mortality analysis':
       st.write(fig)
     else:
       st.write(fig3)
-    
+      
+
       
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
   style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
@@ -93,16 +93,6 @@ if sidebar_keuze == 'Infant mortality analysis':
                       line_opacity= 0.8,
                       legend_name= 'Infant mortality rate per country per 1000 live births').add_to(b)
     folium_static(b)
-
-  col1, col2 = st.columns(2)
-  
-  with col1:
-    gapminder_2019 = gapminder[gapminder['year']==2007]
-    fig = px.box(gapminder_2019, y="lifeExp", x="continent").update_layout(title = 'Life expectancy per continent', xaxis_title = 'Continents', yaxis_title = 'Life expectancy')
-    st.write(fig)
-  with col2:
-    fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate').update_layout(yaxis_title="Infant mortality rate")
-    st.write(fig)
     
   col1, col2 = st.columns(2)
   
@@ -110,10 +100,26 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
     st.write(fig)
   with col2:
-    st.image("matrix.png")
+    fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate').update_layout(yaxis_title="Infant mortality rate")
+    st.write(fig)
+
+  col1, col2 = st.columns(2)
   
-  fig = px.histogram(household, x="Region", y = 'Household size').update_layout(title = 'Household size per region', xaxis_title = 'Regions', yaxis_title = 'Household size')
-  st.write(fig)
+  with col1:
+    fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red').update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+    fig3 = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+    if st.checkbox('Show trendline'):
+      st.write(fig)
+    else:
+      st.write(fig3)
+  with col2:
+    fig = px.histogram(household, x="Region", y = 'Household size').update_layout(title = 'Household size per region', xaxis_title = 'Regions', yaxis_title = 'Household size')
+    st.write(fig)
+    
+    
+  st.image("matrix.png")
+  
+ 
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
