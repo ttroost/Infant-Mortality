@@ -10,7 +10,7 @@ from streamlit_folium import folium_static
 from statsmodels.formula.api import ols
 import ppscore as pps
 import seaborn as sns
-
+import plotly.graph_objects as go
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
@@ -103,7 +103,7 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
     st.write(fig)
   
-  fig = px.imshow(df2)
+  fig = go.Heatmap(df2)
   st.write(fig)
 
 elif sidebar_keuze == 'Sources':
