@@ -60,8 +60,4 @@ bplot = sns.boxplot(y='lifeExp', x='continent',
                  palette="colorblind")
 bplot.set_title('Life expectancy per continent in 2019')
 
-# matrix
-matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
-sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
-
 
