@@ -42,7 +42,7 @@ df2.head()
 with st.sidebar:
   sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis',"Sources"])
 
-if sidebar_keuze = 'Infant mortality analysis':
+if sidebar_keuze == 'Infant mortality analysis':
   st.markdown('***')
   st.markdown("<h3 style='text-align: center; color: black;'>Infant mortality analysis</h3>", unsafe_allow_html=True)
   st.markdown('***')
