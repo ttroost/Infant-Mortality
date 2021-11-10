@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly as plt
 import seaborn as sns
 import openpyxl
-
+import statsmodels
 
 # import dataset 
 data = pd.read_csv('Life_Expectancy_Data (1).csv')
