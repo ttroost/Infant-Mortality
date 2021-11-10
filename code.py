@@ -56,7 +56,7 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.scatter(data, y='infant deaths', x="GDP").update_layout(title = 'Infant deaths vs. GDP ', xaxis_title = 'GDP', yaxis_title = 'Infant deaths')
     st.write(fig)
   with col2:
-      fig = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+      fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red').update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
       st.write(fig)
       
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
