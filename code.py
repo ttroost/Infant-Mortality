@@ -42,7 +42,7 @@ fig.update_layout(title = 'Infant mortality rate vs. amount of babies per woman'
 fig.show()
 
 # histogram
-fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)
+fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)')
 st.write(fig)
 
 
