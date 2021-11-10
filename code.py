@@ -48,10 +48,6 @@ if sidebar_keuze == 'Infant mortality analysis':
   st.markdown("<h3 style='text-align: center; color: black;'>Infant mortality analysis</h3>", unsafe_allow_html=True)
   st.markdown('***')
   
-  kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
-  style_function = lambda x: {'fillColor': '#ffffff', 'color':'#000000', 'fillOpacity': 0.1, 'weight': 0.1}
-  highlight_function = lambda x: {'fillColor': '#000000', 'color':'#000000', 'fillOpacity': 0.50, 'weight': 0.1}
-  
   col1, col2 = st.columns([7,1])
   
   with col1:
@@ -67,7 +63,7 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.box(gapminder_2019, y="lifeExp", x="continent")
     st.write(fig)
   with col2:
-      if kaart_opties == '1985':
+    if kaart_opties == '1985':
       a = folium.Map(zoom_start= 10,tiles='cartodbpositron')
       folium.Choropleth(geo_data= merged_mortality,
                         name= 'geometry',
