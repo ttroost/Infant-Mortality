@@ -9,6 +9,7 @@ import openpyxl
 from streamlit_folium import folium_static
 from statsmodels.formula.api import ols
 import ppscore as pps
+import seaborn
 
 
 
@@ -102,6 +103,16 @@ if sidebar_keuze == 'Infant mortality analysis':
     with col2:
       fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
       st.write(fig)
+
+  matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
+  sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
+  l = ["CBR", "GrowthRate", "IMR"]
+  chk = [Checkbox(description=a) for a in l]
+  def updatePlot(**kwargs):
+    print([(k,v) for k, v in kwargs.items()])
+  interact(updatePlot, **{c.description: c.value for c in chk})
+  st.write(matrix_df)
+      
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
