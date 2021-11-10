@@ -91,22 +91,24 @@ if sidebar_keuze == 'Infant mortality analysis':
   fig = px.box(gapminder_2019, y="lifeExp", x="continent")
   st.write(fig)
   
-  st.image("matrix.png")
-
-    
-         
-       
   col1, col2 = st.columns(2)
   
   with col1:
-    fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)').update_layout(yaxis_title="Infant mortality rate")
+    gapminder_2019 = gapminder[gapminder['year']==2007]
+    fig = px.box(gapminder_2019, y="lifeExp", x="continent")
     st.write(fig)
   with col2:
+    fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)').update_layout(yaxis_title="Infant mortality rate")
+    st.write(fig)
+    
+  col1, col2 = st.columns(2)
+  
+  with col1:
     fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
     st.write(fig)
+  with col2:
+    st.image("matrix.png")
   
-  fig = px.imshow(df2)
-  st.write(fig)
 
 elif sidebar_keuze == 'Sources':
   st.markdown('***')
