@@ -42,9 +42,9 @@ fig.update_layout(title = 'Infant mortality rate vs. amount of babies per woman'
 fig.show()
 
 # histogram
-fig = px.histogram(infants, x="Country", y = 'infant mortality rate')
-fig.update_layout(title = 'Top 10 countries with highest infant mortality rate (2021)', xaxis_title = 'Countries', yaxis_title = 'Infant mortality rate')
-fig.show()
+fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021))
+st.write(fig)
+
 
 # lijndiagram
 fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
@@ -52,7 +52,7 @@ fig.show()
 
 #boxplot
 gapminder_2019 = gapminder[gapminder['year']==2007]
-gapminder_2019.shape
+
 
 bplot = sns.boxplot(y='lifeExp', x='continent', 
                  data=gapminder_2019, 
