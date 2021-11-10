@@ -44,7 +44,7 @@ df2.head()
 
 # interactive onderdelen
 with st.sidebar:
-  sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis','Sources'], key = '2')
+  sidebar_keuze= st.radio('Chapters:', ['Infant mortality analysis','Sources'])
 
 if sidebar_keuze == 'Infant mortality analysis':
   st.markdown('***')
