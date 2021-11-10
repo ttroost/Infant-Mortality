@@ -100,9 +100,9 @@ if sidebar_keuze == 'Infant mortality analysis':
   with col1:
     fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate (2021)').update_layout(yaxis_title="Infant mortality rate")
     st.write(fig)
-    with col2:
-      fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
-      st.write(fig)
+  with col2:
+    fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
+    st.write(fig)
 
   matrix_df = pps.matrix(df2)[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
   fig2 = sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
