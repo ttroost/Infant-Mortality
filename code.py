@@ -103,7 +103,7 @@ if sidebar_keuze == 'Infant mortality analysis':
     fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
     st.write(fig)
   
-  fig = go.Figure(df2)
+  fig = px.imshow(df2)
   st.write(fig)
 
 elif sidebar_keuze == 'Sources':
