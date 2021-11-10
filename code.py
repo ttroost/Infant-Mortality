@@ -55,15 +55,7 @@ if sidebar_keuze == 'Infant mortality analysis':
   gapminder_2019 = gapminder[gapminder['year']==2007]
   fig = px.box(gapminder_2019, y="lifeExp", x="continent").update_layout(title = 'Life expectancy per continent', xaxis_title = 'Continents', yaxis_title = 'Life expectancy')
   st.write(fig)
-  
-  with col2:
-    fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red').update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
-    fig3 = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
-    if st.checkbox('Show trendline'):
-      st.write(fig)
-    else:
-      st.write(fig3)
-      
+     
 
       
   kaart_opties = st.selectbox('Choose a year:', ['1985','2019'])
