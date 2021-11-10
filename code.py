@@ -36,6 +36,7 @@ if sidebar_keuze == 'Sources':
            https://www.statista.com/statistics/264714/countries-with-the-highest-infant-mortality-rate/
            https://www.statista.com/statistics/1072803/child-mortality-rate-africa-historical/
            https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv
+           ' ' ')
            
 
 # rename admin to country so we can merge
