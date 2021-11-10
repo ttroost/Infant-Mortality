@@ -57,7 +57,7 @@ if sidebar_keuze == 'Infant mortality analysis':
       fig = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
       st.write(fig)
   
-  col1, col2 = st.columns([7,1])
+  col1, col2 = st.columns([4,1])
   with col1:
     gapminder_2019 = gapminder[gapminder['year']==2007]
     fig = px.box(gapminder_2019, y="lifeExp", x="continent")
