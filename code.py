@@ -47,7 +47,7 @@ st.write(fig)
 
 # lijndiagram
 fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
-fig.show()
+st.write(fig)
 
 #boxplot
 gapminder_2019 = gapminder[gapminder['year']==2007]
