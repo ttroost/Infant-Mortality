@@ -98,7 +98,7 @@ if sidebar_keuze == 'Infant mortality analysis':
   
   with col1:
     fig = px.scatter(df, y='IMR', x="TFR", trendline = 'ols', trendline_color_override = 'red').update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
-    fig3 = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (live births per woman)', yaxis_title = 'Infant mortality rate')
+    fig3 = px.scatter(df, y='IMR', x="TFR").update_layout(title = 'Infant mortality rate vs. amount of babies per woman', xaxis_title = 'Total fertility (births per woman)', yaxis_title = 'Infant mortality rate')
     if st.checkbox('Show trendline'):
       st.write(fig)
     else:
