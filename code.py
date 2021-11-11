@@ -88,7 +88,7 @@ if sidebar_keuze == 'Infant mortality analysis':
   col1, col2 = st.columns(2)
   
   with col1:
-    fig = px.line(mortality_africa, x = 'Year', y = 'mortality rate', title = 'Child mortality in Africa over the years')
+    fig = px.line(mortality_africa, x = 'Year', y = 'Infant mortality rate', title = 'Infant mortality in Africa over the years')
     st.write(fig)
   with col2:
     fig = px.histogram(infants, x="Country", y = 'infant mortality rate', title = 'Top 10 countries with highest infant mortality rate').update_layout(yaxis_title="Infant mortality rate")
